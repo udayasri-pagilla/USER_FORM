@@ -1,4 +1,4 @@
-function validateForm() {
+function handleRegister() {
     let fullName = document.getElementById("fullName").value;
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
@@ -27,7 +27,23 @@ function validateForm() {
         return false;
     }
 
-    // Form is valid
-    alert("Registration Successful!");
-    return true;
+    // Hide the registration form
+    document.getElementById("formContainer").style.display = "none";
+
+    // Show Thank You message
+    document.getElementById("thankYouMessage").style.display = "block";
+
+    // Start balloon animation
+    createBalloons();
+
+    return false; // Prevent form from submitting
 }
+
+// Create Balloons
+function createBalloons() {
+    let balloonsContainer = document.getElementById("balloons");
+    for (let i = 0; i < 10; i++) {
+        let balloon = document.createElement("div");
+        balloon.classList.add("balloon");
+        balloon.style.animationDelay = `${Math.random() * 2}s`; // randomize delay
+        balloonsContainer.append
