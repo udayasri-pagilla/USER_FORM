@@ -1,4 +1,5 @@
 function handleRegister() {
+    // Get form data
     let fullName = document.getElementById("fullName").value;
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
@@ -11,20 +12,20 @@ function handleRegister() {
     // Check if all fields are filled out
     if (fullName === "" || email === "" || password === "" || confirmPassword === "") {
         errorMessage.textContent = "All fields are required.";
-        return false;
+        return false;  // Prevent form submission
     }
 
     // Validate if passwords match
     if (password !== confirmPassword) {
         errorMessage.textContent = "Passwords do not match.";
-        return false;
+        return false;  // Prevent form submission
     }
 
     // Validate email format
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailPattern.test(email)) {
         errorMessage.textContent = "Please enter a valid email address.";
-        return false;
+        return false;  // Prevent form submission
     }
 
     // Hide the registration form
@@ -36,14 +37,16 @@ function handleRegister() {
     // Start balloon animation
     createBalloons();
 
-    return false; // Prevent form from submitting
+    return false;  // Prevent form submission
 }
 
-// Create Balloons
+// Create Balloons animation
 function createBalloons() {
     let balloonsContainer = document.getElementById("balloons");
     for (let i = 0; i < 10; i++) {
         let balloon = document.createElement("div");
         balloon.classList.add("balloon");
         balloon.style.animationDelay = `${Math.random() * 2}s`; // randomize delay
-        balloonsContainer.append
+        balloonsContainer.appendChild(balloon);
+    }
+}
