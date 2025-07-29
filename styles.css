@@ -24,7 +24,6 @@ body {
     border-radius: 10px;
     width: 320px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    transition: opacity 1s ease-in-out;
 }
 
 h2 {
@@ -32,7 +31,6 @@ h2 {
     color: #333;
     font-size: 24px;
     margin-bottom: 20px;
-    animation: fadeIn 1s ease-out;
 }
 
 /* Labels */
@@ -52,7 +50,6 @@ input {
     border-radius: 5px;
     font-size: 16px;
     background-color: #f0f0f0;
-    transition: all 0.3s ease;
 }
 
 /* Input focus effect */
@@ -99,7 +96,6 @@ button:hover {
     color: #333;
     font-size: 24px;
     font-weight: bold;
-    animation: bounceIn 1s ease-out;
 }
 
 .thank-you h1 {
@@ -157,32 +153,5 @@ button:hover {
     }
     100% {
         background-position: 0% 50%;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes bounceIn {
-    from {
-        transform: scale(0);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-/* Mobile responsive */
-@media (max-width: 480px) {
-    .form-container {
-        width: 90%;
     }
 }
