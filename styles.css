@@ -1,0 +1,129 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #FF0066, #FF6600, #FFCC00, #33CCFF);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Form Container */
+.form-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    width: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    animation: bounceIn 0.8s ease-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+/* Focus Effect */
+input:focus {
+    border-color: #FF0066;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 0, 102, 0.5);
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #FF0066;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #FF3399;
+    transform: scale(1.05);
+}
+
+/* Error message */
+.error-message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Animations */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        width: 90%;
+    }
+}
